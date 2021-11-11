@@ -30,8 +30,7 @@ tell application "System Events"
 			
 			if item 1 of displayCheckboxes contains deviceName then
 				-- If one of the checkboxes has the same name as the iPad (`deviceName`), click that checkbox to connect to Sidecar.
-				set deviceToggle to checkbox deviceName of scroll area of its window localizedMenuBarItem
-				click deviceToggle
+				click checkbox deviceName of scroll area of its window localizedMenuBarItem
 				
 				-- Click the Control Center menu to close the secondary menu and return to the main menu.
 				click menu bar item localizedMenuBarItem of menu bar 1
