@@ -2,9 +2,9 @@ use AppleScript version "2.4" -- Yosemite (10.10) or later
 use scripting additions
 
 set deviceName to "My iPad" -- Change this to the name of your iPad.
-set localizedMenuBarItem = "Control Center"
-set localizedCheckbox = "Connect to Sidecar"
-set localizedDisconnect = "Disconnect"
+set localizedMenuBarItem to "Control Center"
+set localizedCheckbox to "Connect to Sidecar"
+set localizedDisconnect to "Disconnect"
 
 tell application "System Events"
 	tell its application process "ControlCenter"
