@@ -44,7 +44,7 @@ tell application "System Events"
 				if cb contains localizedDisconnect then
 					-- If one of the checkboxes has "Disconnect" in its name, Sidecar is already connected.
 					-- Click the checkbox to disconnect Sidecar.
-					set sidecarToggle to ((checkbox 1 of group 1 of group 1 of window localizedMenuBarItem) whose title contains localizedDisconnect)
+					set sidecarToggle to ((checkbox 1 of its window localizedMenuBarItem) whose title contains localizedDisconnect)
 					click sidecarToggle
 					
 					-- Click the Control Center menu again to close the main menu.
