@@ -9,28 +9,28 @@ set localizedDisconnect to "Disconnect"
 tell application "System Events"
 	tell its application process "ControlCenter"
 		-- Click the Control Center menu.
-		click menu bar item localizedMenuBarItem of menu bar 1
+		click its menu bar item localizedMenuBarItem of its menu bar 1
 		
 		-- Give the window time to draw.
 		delay 1
 		
 		-- Get all of the checkboxes in the Control Center menu.
-		set ccCheckboxes to title of (every checkbox of group 1 of group 1 of window localizedMenuBarItem)
+		set ccCheckboxes to title of (every checkbox of its window localizedMenuBarItem)
 		
 		if ccCheckboxes contains localizedCheckbox then
 			-- If one of the checkboxes is named "Connect to Sidecar," click that checkbox.
-			set sidecarToggle to checkbox localizedCheckbox of group 1 of group 1 of window localizedMenuBarItem
+			set sidecarToggle to checkbox localizedCheckbox of its window localizedMenuBarItem
 			click sidecarToggle
 			
 			-- This opens a secondary window that contains the button to actually connect to Sidecar. Give the window time to draw.
 			delay 1
 			
 			-- Get all of the checkboxes in the secondary menu.
-			set displayCheckboxes to title of (every checkbox of group 1 of group 1 of window localizedMenuBarItem)
+			set displayCheckboxes to title of (every checkbox of scroll area of its window localizedMenuBarItem)
 			
-			if displayCheckboxes contains deviceName then
+			if item 1 of displayCheckboxes contains deviceName then
 				-- If one of the checkboxes has the same name as the iPad (`deviceName`), click that checkbox to connect to Sidecar.
-				set deviceToggle to checkbox deviceName of group 1 of group 1 of window localizedMenuBarItem
+				set deviceToggle to checkbox deviceName of scroll area of its window localizedMenuBarItem
 				click deviceToggle
 				
 				-- Click the Control Center menu to close the secondary menu and return to the main menu.
